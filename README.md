@@ -10,10 +10,11 @@ Install dependencies:
 yarn
 ```
 
-Run the dev server:
+Run the dev server and the local API:
 
 ```shell
 yarn start
+yarn start:api
 ```
 
 Make your move, develop your new feature, then commit with:

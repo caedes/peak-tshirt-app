@@ -1,0 +1,135 @@
+{
+  "tshirts": [
+    {
+      "id": 1,
+      "name": "T-shirt 'Lune'",
+      "imageUrl": "1.jpg",
+      "description": "T-shirt noir avec un motif de lune imprimé sur le devant.",
+      "size": "M",
+      "styleId": 2,
+      "price": 20.99
+    },
+    {
+      "id": 2,
+      "name": "T-shirt 'Flamant Rose'",
+      "imageUrl": "2.jpg",
+      "description": "T-shirt rose avec un motif de flamant rose imprimé sur le devant.",
+      "size": "S",
+      "styleId": 1,
+      "price": 18.99
+    },
+    {
+      "id": 3,
+      "name": "T-shirt 'Rock N Roll'",
+      "imageUrl": "3.jpg",
+      "description": "T-shirt blanc avec un motif 'Rock N Roll' imprimé sur le devant.",
+      "size": "L",
+      "styleId": 2,
+      "price": 22.99
+    },
+    {
+      "id": 4,
+      "name": "T-shirt 'Bleu Pastel'",
+      "imageUrl": "4.jpg",
+      "description": "T-shirt bleu pastel avec un col en V.",
+      "size": "XL",
+      "styleId": 3,
+      "price": 24.99
+    },
+    {
+      "id": 5,
+      "name": "T-shirt 'Geek'",
+      "imageUrl": "5.jpg",
+      "description": "T-shirt noir avec un motif geek imprimé sur le devant.",
+      "size": "M",
+      "styleId": 2,
+      "price": 19.99
+    },
+    {
+      "id": 6,
+      "name": "T-shirt 'Fleurs'",
+      "imageUrl": "6.jpg",
+      "description": "T-shirt rose avec un motif de fleurs imprimé sur le devant.",
+      "size": "S",
+      "styleId": 1,
+      "price": 18.99
+    },
+    {
+      "id": 7,
+      "name": "T-shirt 'Cactus'",
+      "imageUrl": "7.jpg",
+      "description": "T-shirt blanc avec un motif de cactus imprimé sur le devant.",
+      "size": "M",
+      "styleId": 1,
+      "price": 16.99
+    },
+    {
+      "id": 8,
+      "name": "T-shirt 'Félin'",
+      "imageUrl": "8.jpg",
+      "description": "T-shirt noir avec un motif de félin imprimé sur le devant.",
+      "size": "L",
+      "styleId": 1,
+      "price": 21.99
+    },
+    {
+      "id": 9,
+      "name": "T-shirt 'Coloré'",
+      "imageUrl": "9.jpg",
+      "description": "T-shirt bleu clair avec un motif coloré imprimé sur le devant.",
+      "size": "S",
+      "styleId": 2,
+      "price": 19.99
+    },
+    {
+      "id": 10,
+      "name": "T-shirt 'Minimaliste'",
+      "imageUrl": "10.jpg",
+      "description": "T-shirt blanc avec un motif minimaliste imprimé sur le devant.",
+      "size": "M",
+      "styleId": 2,
+      "price": 17.99
+    },
+    {
+      "id": 11,
+      "name": "T-shirt 'Motivational'",
+      "imageUrl": "11.jpg",
+      "description": "T-shirt noir avec une citation motivante imprimée sur le devant.",
+      "size": "L",
+      "styleId": 3,
+      "price": 23.99
+    },
+    {
+      "id": 12,
+      "name": "T-shirt 'Polo'",
+      "imageUrl": "12.jpg",
+      "description": "T-shirt à col polo en coton piqué, couleur bleu marine.",
+      "size": "M",
+      "styleId": 3,
+      "price": 26.99
+    },
+    {
+      "id": 13,
+      "name": "T-shirt 'Rayures'",
+      "imageUrl": "13.jpg",
+      "description": "T-shirt blanc avec des rayures noires horizontales.",
+      "size": "XL",
+      "styleId": 3,
+      "price": 24.99
+    },
+    {
+      "id": 14,
+      "name": "T-shirt 'Chemise'",
+      "imageUrl": "14.jpg",
+      "description": "T-shirt en jersey avec des manches longues et des poignets boutonnés, couleur grise.",
+      "size": "L",
+      "styleId": 3,
+      "price": 29.99
+    }
+  ],
+  "styles": [
+    { "id": 1, "name": "Féminin" },
+    { "id": 2, "name": "Décontracté" },
+    { "id": 3, "name": "Classique" }
+  ]
+}
