@@ -5,6 +5,7 @@
   "scripts": {
     "build": "react-scripts build",
     "commit": "git-cz",
+    "lint": "eslint --cache .",
     "prepare": "husky install",
     "start": "react-scripts start",
     "start:api": "json-server --watch db.json --port 3001",
