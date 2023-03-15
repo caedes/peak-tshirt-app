@@ -23,6 +23,10 @@ Make your move, develop your new feature, then commit with:
 yarn commit
 ```
 
+## Mockup
+
+![Mockup](./docs/mockup.png)
+
 ## CRA
 
 [Official CRA doc](./docs/CRA.md).
