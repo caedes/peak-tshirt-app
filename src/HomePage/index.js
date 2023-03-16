@@ -2,29 +2,20 @@ import {
   AppBar,
   Badge,
   Box,
+  CircularProgress,
   Grid,
   IconButton,
   Toolbar,
   Typography,
 } from "@mui/material";
 import { Mail } from "@mui/icons-material";
+import React from "react";
+import { useTshirts } from "hooks";
 
 import TshirtCard from "../TshirtCard";
-import React from "react";
 
 export default function HomePage() {
-  const [tshirts, setTshirts] = React.useState([]);
-
-  React.useEffect(() => {
-    async function fetchTshirts() {
-      const response = await fetch("http://localhost:3001/tshirts");
-      const tshirts = await response.json();
-
-      setTshirts(tshirts);
-    }
-
-    fetchTshirts();
-  }, []);
+  const { isLoading, tshirts } = useTshirts();
 
   return (
     <>
@@ -48,13 +39,17 @@ export default function HomePage() {
         </Toolbar>
       </AppBar>
 
-      <Grid container spacing={2}>
-        {tshirts.map(({ id }) => (
-          <Grid item xs={6} key={id}>
-            <TshirtCard />
-          </Grid>
-        ))}
-      </Grid>
+      {isLoading ? (
+        <CircularProgress />
+      ) : (
+        <Grid container spacing={2}>
+          {tshirts.map(({ id }) => (
+            <Grid item xs={6} key={id}>
+              <TshirtCard />
+            </Grid>
+          ))}
+        </Grid>
+      )}
     </>
   );
 }
