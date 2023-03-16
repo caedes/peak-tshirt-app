@@ -43,9 +43,9 @@ export default function HomePage() {
         <CircularProgress />
       ) : (
         <Grid container spacing={2}>
-          {tshirts.map(({ id }) => (
-            <Grid item xs={6} key={id}>
-              <TshirtCard />
+          {tshirts.map((tshirt) => (
+            <Grid item xs={6} key={tshirt.id}>
+              <TshirtCard {...tshirt} />
             </Grid>
           ))}
         </Grid>
