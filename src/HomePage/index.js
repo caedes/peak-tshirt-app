@@ -28,7 +28,7 @@ export default function HomePage() {
 
   return (
     <>
-      <AppBar position="sticky">
+      <AppBar>
         <Toolbar>
           <Typography variant="h6" component="h1">
             Peak Shirt
