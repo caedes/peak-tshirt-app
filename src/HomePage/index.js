@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import { Mail } from "@mui/icons-material";
 import React from "react";
-import { useTshirts } from "hooks";
+import { useTshirts } from "core/hooks";
 
 import TshirtCard from "../TshirtCard";
 

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "hooks": ["./src/hooks"]
+      "core": ["./src/core"]
     }
   },
   "exclude": ["node_modules"]

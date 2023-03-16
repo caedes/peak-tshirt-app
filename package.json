@@ -50,6 +50,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-global-configuration": "^1.4.1",
     "react-query": "^3.39.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.0"
@@ -57,6 +58,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
+    "buffer": "^6.0.3",
     "git-cz": "^4.9.0",
     "husky": "^8.0.3",
     "json-server": "^0.17.2",
