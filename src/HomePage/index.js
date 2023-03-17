@@ -13,6 +13,7 @@ import React from "react";
 import { useTshirts } from "core/hooks";
 
 import TshirtCard from "../TshirtCard";
+import StyleFilters from "StyleFilters";
 
 export default function HomePage() {
   const { isLoading, tshirts } = useTshirts();
@@ -42,13 +43,16 @@ export default function HomePage() {
       {isLoading ? (
         <CircularProgress />
       ) : (
-        <Grid container spacing={2}>
-          {tshirts.map((tshirt) => (
-            <Grid item xs={6} key={tshirt.id}>
-              <TshirtCard {...tshirt} />
-            </Grid>
-          ))}
-        </Grid>
+        <>
+          <StyleFilters />
+          <Grid container spacing={2}>
+            {tshirts.map((tshirt) => (
+              <Grid item xs={6} key={tshirt.id}>
+                <TshirtCard {...tshirt} />
+              </Grid>
+            ))}
+          </Grid>
+        </>
       )}
     </>
   );
