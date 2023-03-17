@@ -7,6 +7,7 @@ import { QueryClientProvider, QueryClient } from "react-query";
 
 import HomePage from "../HomePage";
 import theme from "./theme";
+import { CssBaseline } from "@mui/material";
 
 const queryClient = new QueryClient();
 
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <HomePage />
       </ThemeProvider>
     </QueryClientProvider>
