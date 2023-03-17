@@ -7,5 +7,16 @@ const API_BASE_URL = config.get(
 );
 
 export const tshirts = {
-  getList: () => () => fetch(`${API_BASE_URL}/tshirts`).then(responseToJson),
+  getList:
+    ({ styleIds }) =>
+    () => {
+      const tshirtRoute = new URL("/tshirts", API_BASE_URL);
+
+      const { searchParams } = tshirtRoute;
+      styleIds.forEach((styleId) => {
+        searchParams.append("styleId", styleId);
+      });
+
+      return fetch(tshirtRoute).then(responseToJson);
+    },
 };

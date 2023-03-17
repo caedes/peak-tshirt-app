@@ -11,12 +11,14 @@ import {
 import { Mail } from "@mui/icons-material";
 import React from "react";
 import { useTshirts } from "core/hooks";
+import { useStyleFilters } from "core/contexts";
 
 import TshirtCard from "../TshirtCard";
 import StyleFilters from "StyleFilters";
 
 export default function HomePage() {
-  const { isLoading, tshirts } = useTshirts();
+  const [selectedStyles] = useStyleFilters();
+  const { isLoading, tshirts } = useTshirts({ styleIds: selectedStyles });
 
   return (
     <>

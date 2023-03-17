@@ -1,16 +1,13 @@
 import { Chip, CircularProgress, Stack } from "@mui/material";
+import { useStyleFilters } from "core/contexts";
 import { useStyles } from "core/hooks";
-import { useSet } from "react-use";
+import React from "react";
 
 export default function StyleFilters() {
   const { isLoading, styles } = useStyles();
-  const [selectedStyles, { toggle }] = useSet(new Set());
+  const [selectedStyles, { selectFilter }] = useStyleFilters();
 
   if (isLoading) return <CircularProgress />;
-
-  const selectFilter = (id) => () => {
-    toggle(id);
-  };
 
   return (
     <Stack

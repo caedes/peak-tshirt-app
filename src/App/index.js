@@ -4,10 +4,11 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { ThemeProvider } from "@mui/material/styles";
 import { QueryClientProvider, QueryClient } from "react-query";
+import { CssBaseline } from "@mui/material";
+import { FilterProvider } from "core/contexts";
 
 import HomePage from "../HomePage";
 import theme from "./theme";
-import { CssBaseline } from "@mui/material";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -21,8 +22,10 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <HomePage />
+        <FilterProvider>
+          <CssBaseline />
+          <HomePage />
+        </FilterProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );
