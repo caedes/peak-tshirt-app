@@ -12,6 +12,7 @@ import HomePage from "../HomePage";
 import theme from "./theme";
 import TshirtPage from "../TshirtPage";
 import Layout from "../Layout";
+import ErrorPage from "../ErrorPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "tshirts/:tshirtId",
