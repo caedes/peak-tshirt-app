@@ -22,6 +22,11 @@ export function useCart() {
  */
 const cartReduce = (cart, action) => {
   switch (action.type) {
+    case "add":
+      const { cartItem } = action.payload;
+
+      return [...cart, cartItem];
+
     case "remove":
       const { id } = action.payload;
 
@@ -47,12 +52,14 @@ export function CartProvider({ children }) {
   const purchaseCart = () => dispatch({ type: "purchase" });
   const removeFromCart = (id) => () =>
     dispatch({ type: "remove", payload: { id } });
+  const addToCart = (cartItem) => () =>
+    dispatch({ type: "add", payload: { cartItem } });
 
   return (
     <CartContext.Provider
       value={[
         { cart, isCartEmpty, cartItemsQuantity },
-        { purchaseCart, removeFromCart },
+        { addToCart, purchaseCart, removeFromCart },
       ]}
     >
       {children}
