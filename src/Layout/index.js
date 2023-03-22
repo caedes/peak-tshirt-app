@@ -27,6 +27,8 @@ export default function Layout() {
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
+              LinkComponent={Link}
+              to="/cart"
             >
               <Badge badgeContent={4} color="error">
                 <Mail />
