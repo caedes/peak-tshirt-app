@@ -1,10 +1,11 @@
-import { CircularProgress, Paper } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { useTshirt } from "core/hooks";
 import { useParams } from "react-router-dom";
 import { AddShoppingCart } from "@mui/icons-material";
 import { CtaButton } from "ds/atoms";
 
 import TshirtCard from "../TshirtCard";
+import { BottomCallToActions } from "ds/molecules";
 
 export default function TshirtPage() {
   const { tshirtId: id } = useParams();
@@ -15,15 +16,11 @@ export default function TshirtPage() {
   return (
     <>
       <TshirtCard {...tshirt} />
-      <Paper
-        elevation={3}
-        square
-        sx={{ padding: 2, position: "fixed", bottom: 0, width: "100vw" }}
-      >
+      <BottomCallToActions>
         <CtaButton startIcon={<AddShoppingCart />} fullWidth>
           Add to cart
         </CtaButton>
-      </Paper>
+      </BottomCallToActions>
     </>
   );
 }
