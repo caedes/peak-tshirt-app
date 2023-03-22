@@ -1,6 +1,7 @@
 import { Delete } from "@mui/icons-material";
 import {
   Avatar,
+  Grid,
   IconButton,
   List,
   ListItem,
@@ -25,54 +26,45 @@ TotalPrice.propTypes = {
 };
 
 export default function CartPage() {
+  const cart = [
+    { id: 1, price: 12.34, name: "Tshirt 1", imageUrl: "1.jpg", quantity: 1 },
+    { id: 2, price: 12.34, name: "Tshirt 2", imageUrl: "1.jpg", quantity: 2 },
+    { id: 3, price: 12.34, name: "Tshirt 2", imageUrl: "1.jpg", quantity: 2 },
+    { id: 4, price: 12.34, name: "Tshirt 2", imageUrl: "1.jpg", quantity: 2 },
+  ];
+
   return (
     <>
       <List>
-        <ListItem
-          secondaryAction={
-            <IconButton edge="end" aria-label="delete">
-              <Delete />
-            </IconButton>
-          }
-        >
-          <ListItemAvatar>
-            <Avatar src="" />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Single-line item"
-            secondary={"Secondary text"}
-          />
-        </ListItem>
-        <ListItem
-          secondaryAction={
-            <IconButton edge="end" aria-label="delete">
-              <Delete />
-            </IconButton>
-          }
-        >
-          <ListItemAvatar>
-            <Avatar src="" />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Single-line item"
-            secondary={"Secondary text"}
-          />
-        </ListItem>
-        <ListItem
-          secondaryAction={
-            <IconButton edge="end" aria-label="delete">
-              <Delete />
-            </IconButton>
-          }
-        >
-          <ListItemAvatar>
-            <Avatar src="" />
-          </ListItemAvatar>
-          <ListItemText
-            primary="Single-line item"
-            secondary={"Secondary text"}
-          />
-        </ListItem>
+        {cart.map(({ id, price, name, imageUrl, quantity }) => (
+          <ListItem
+            key={id}
+            secondaryAction={
+              <IconButton edge="end" aria-label="delete">
+                <Delete />
+              </IconButton>
+            }
+          >
+            <ListItemAvatar>
+              <Avatar src={`/images/${imageUrl}`} />
+            </ListItemAvatar>
+            <ListItemText
+              primary={
+                <Grid container>
+                  <Grid item>
+                    <Typography>{name}</Typography>
+                  </Grid>
+                  {quantity > 1 && (
+                    <Grid item sx={{ marginLeft: 1 }}>
+                      <Typography variant="caption">(x{quantity})</Typography>
+                    </Grid>
+                  )}
+                </Grid>
+              }
+              secondary={<Price value={price} />}
+            />
+          </ListItem>
+        ))}
       </List>
       <BottomCallToActions secondary={<TotalPrice price={123.45} />}>
         <CtaButton startIcon={<ShoppingCartCheckout />} fullWidth>
