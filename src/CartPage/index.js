@@ -14,6 +14,7 @@ import { BottomCallToActions } from "ds/molecules";
 import { ShoppingCartCheckout } from "@mui/icons-material";
 import { number } from "prop-types";
 import { Price } from "ds/atoms";
+import { useCart } from "core/contexts";
 
 const TotalPrice = ({ price }) => (
   <Typography>
@@ -26,12 +27,11 @@ TotalPrice.propTypes = {
 };
 
 export default function CartPage() {
-  const cart = [
-    { id: 1, price: 12.34, name: "Tshirt 1", imageUrl: "1.jpg", quantity: 1 },
-    { id: 2, price: 12.34, name: "Tshirt 2", imageUrl: "1.jpg", quantity: 2 },
-    { id: 3, price: 12.34, name: "Tshirt 2", imageUrl: "1.jpg", quantity: 2 },
-    { id: 4, price: 12.34, name: "Tshirt 2", imageUrl: "1.jpg", quantity: 2 },
-  ];
+  const [cart, { purchaseCart }] = useCart();
+
+  const isCartEmpty = cart.length === 0;
+
+  if (isCartEmpty) return <Typography>Go shopping!</Typography>;
 
   return (
     <>
@@ -67,7 +67,11 @@ export default function CartPage() {
         ))}
       </List>
       <BottomCallToActions secondary={<TotalPrice price={123.45} />}>
-        <CtaButton startIcon={<ShoppingCartCheckout />} fullWidth>
+        <CtaButton
+          startIcon={<ShoppingCartCheckout />}
+          fullWidth
+          onClick={purchaseCart}
+        >
           Purchase
         </CtaButton>
       </BottomCallToActions>

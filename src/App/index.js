@@ -5,7 +5,7 @@ import "@fontsource/roboto/700.css";
 import { ThemeProvider } from "@mui/material/styles";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { CssBaseline } from "@mui/material";
-import { FilterProvider } from "core/contexts";
+import { CartProvider, FilterProvider } from "core/contexts";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import HomePage from "../HomePage";
@@ -50,8 +50,10 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <FilterProvider>
-          <CssBaseline />
-          <RouterProvider router={router} />
+          <CartProvider>
+            <CssBaseline />
+            <RouterProvider router={router} />
+          </CartProvider>
         </FilterProvider>
       </ThemeProvider>
     </QueryClientProvider>
