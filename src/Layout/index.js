@@ -12,9 +12,7 @@ import { Link, Outlet } from "react-router-dom";
 import { useCart } from "core/contexts";
 
 export default function Layout() {
-  const [cart] = useCart();
-
-  const isCartEmpty = cart.length === 0;
+  const [{ isCartEmpty, cartItemsQuantity }] = useCart();
 
   return (
     <>
@@ -34,7 +32,7 @@ export default function Layout() {
               LinkComponent={Link}
               to="/cart"
             >
-              <Badge badgeContent={cart.length} color="primary">
+              <Badge badgeContent={cartItemsQuantity} color="primary">
                 {isCartEmpty ? <ShoppingCartOutlined /> : <ShoppingCart />}
               </Badge>
             </IconButton>

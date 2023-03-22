@@ -20,10 +20,18 @@ const reduce = (state, action) => {
 export function CartProvider({ children }) {
   const [cart, dispatch] = React.useReducer(reduce, []);
 
+  const isCartEmpty = cart.length === 0;
+  const cartItemsQuantity = cart.reduce(
+    (quantity, item) => item.quantity + quantity,
+    0
+  );
+
   const purchaseCart = () => dispatch({ type: "purchase" });
 
   return (
-    <CartContext.Provider value={[cart, { purchaseCart }]}>
+    <CartContext.Provider
+      value={[{ cart, isCartEmpty, cartItemsQuantity }, { purchaseCart }]}
+    >
       {children}
     </CartContext.Provider>
   );

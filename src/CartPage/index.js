@@ -27,9 +27,7 @@ TotalPrice.propTypes = {
 };
 
 export default function CartPage() {
-  const [cart, { purchaseCart }] = useCart();
-
-  const isCartEmpty = cart.length === 0;
+  const [{ cart, isCartEmpty }, { purchaseCart }] = useCart();
 
   if (isCartEmpty) return <Typography>Go shopping!</Typography>;
 
