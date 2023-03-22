@@ -12,10 +12,11 @@ import { CtaButton } from "ds/atoms";
 import { BottomCallToActions } from "ds/molecules";
 import { ShoppingCartCheckout } from "@mui/icons-material";
 import { number } from "prop-types";
+import { Price } from "ds/atoms";
 
 const TotalPrice = ({ price }) => (
   <Typography>
-    <strong>Total price:</strong> {price}
+    <strong>Total price:</strong> <Price value={price} />
   </Typography>
 );
 

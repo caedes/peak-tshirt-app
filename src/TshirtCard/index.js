@@ -7,7 +7,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import Price from "Price";
+import { Price } from "ds/atoms";
 import { number, oneOf, string } from "prop-types";
 import { Link } from "react-router-dom";
 
