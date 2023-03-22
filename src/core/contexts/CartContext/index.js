@@ -7,18 +7,23 @@ export function useCart() {
   return React.useContext(CartContext);
 }
 
-const reduce = (state, action) => {
+const cartReduce = (cart, action) => {
   switch (action.type) {
+    case "remove":
+      const { id } = action.payload;
+
+      return cart.filter(({ id: tshirtId }) => tshirtId !== id);
+
     case "purchase":
       return [];
 
     default:
-      return state;
+      return [...cart];
   }
 };
 
 export function CartProvider({ children }) {
-  const [cart, dispatch] = React.useReducer(reduce, []);
+  const [cart, dispatch] = React.useReducer(cartReduce, []);
 
   const isCartEmpty = cart.length === 0;
   const cartItemsQuantity = cart.reduce(
@@ -27,10 +32,15 @@ export function CartProvider({ children }) {
   );
 
   const purchaseCart = () => dispatch({ type: "purchase" });
+  const removeFromCart = (id) => () =>
+    dispatch({ type: "remove", payload: { id } });
 
   return (
     <CartContext.Provider
-      value={[{ cart, isCartEmpty, cartItemsQuantity }, { purchaseCart }]}
+      value={[
+        { cart, isCartEmpty, cartItemsQuantity },
+        { purchaseCart, removeFromCart },
+      ]}
     >
       {children}
     </CartContext.Provider>
