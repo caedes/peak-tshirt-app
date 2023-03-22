@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "core": ["./src/core"]
+      "core": ["./src/core"],
+      "ds": ["./src/ds"]
     }
   },
   "exclude": ["node_modules"]

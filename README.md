@@ -37,6 +37,10 @@ yarn commit
 
 ![Mockup](./docs/mockup.png)
 
+## Design System
+
+Le Design System (DS) sera mis en place à travers l'approche [Atomic Design](https://atomicdesign.bradfrost.com/table-of-contents/) depuis le _folder_ `/src/ds/`.
+
 ## CRA
 
 [Official CRA doc](./docs/CRA.md).
