@@ -46,4 +46,4 @@ yarn commit
 - [ ] CORS
 - [x] Design de la TshirtPage
 - [x] Data Dynamic de TshirtPage
-- [ ] Bouton ajout au panier (static)
+- [x] Bouton ajout au panier (static)
