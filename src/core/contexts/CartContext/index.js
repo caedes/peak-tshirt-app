@@ -7,6 +7,19 @@ export function useCart() {
   return React.useContext(CartContext);
 }
 
+/**
+ * cartReduce
+ *
+ * State sous le format :
+ * { id: 1, price: 12.34, name: "Tshirt 1", imageUrl: "1.jpg", quantity: 1 }
+ *
+ * @param {*} cart
+ * @param {*} action
+ * @param {string} action.type
+ * @param {Object} action.payload
+ * @param {number} action.payload.id
+ * @returns
+ */
 const cartReduce = (cart, action) => {
   switch (action.type) {
     case "remove":
