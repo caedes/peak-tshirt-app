@@ -6,7 +6,7 @@
     "build": "react-scripts build",
     "commit": "git-cz",
     "lint": "eslint --cache .",
-    "prepare": "husky install",
+    "prepare": "husky install && node ./scripts/copy-config.js",
     "start": "react-scripts start",
     "start:api": "json-server --watch db.json --port 3001",
     "test": "react-scripts test"
