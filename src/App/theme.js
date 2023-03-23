@@ -1,5 +1,4 @@
 import { createTheme } from "@mui/material/styles";
-
 import { grey, common } from "@mui/material/colors";
 
 /**
@@ -23,4 +22,3 @@ export default createTheme({
     },
   },
 });
-// TODO À tester
