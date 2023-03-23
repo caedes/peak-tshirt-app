@@ -10,7 +10,8 @@
     "prepare": "husky install && node ./scripts/copy-config.js",
     "start": "react-scripts start",
     "start:api": "json-server --watch db.json --port 3001",
-    "test": "react-scripts test --coverage"
+    "test": "react-scripts test --coverage",
+    "test:coverage": "yarn open-cli coverage/lcov-report/index.html"
   },
   "commitlint": {
     "extends": [
@@ -36,6 +37,20 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/src/reportWebVitals.js",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/App/index.js",
+      "!<rootDir>/src/core/api/index.js",
+      "!<rootDir>/src/core/contexts/index.js",
+      "!<rootDir>/src/core/hooks/index.js",
+      "!<rootDir>/src/ds/atoms/index.js",
+      "!<rootDir>/src/ds/molecules/index.js"
     ]
   },
   "dependencies": {
@@ -66,6 +81,7 @@
     "husky": "^8.0.3",
     "json-server": "^0.17.2",
     "lint-staged": "^13.2.0",
+    "open-cli": "^7.2.0",
     "prettier": "^2.8.4",
     "prettier-plugin-packagejson": "^2.4.3"
   }
