@@ -3,7 +3,8 @@
     "baseUrl": "src",
     "paths": {
       "core": ["./src/core"],
-      "ds": ["./src/ds"]
+      "ds": ["./src/ds"],
+      "testUtils": ["./src/testUtils"]
     }
   },
   "exclude": ["node_modules"]

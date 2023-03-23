@@ -50,7 +50,8 @@
       "!<rootDir>/src/core/contexts/index.js",
       "!<rootDir>/src/core/hooks/index.js",
       "!<rootDir>/src/ds/atoms/index.js",
-      "!<rootDir>/src/ds/molecules/index.js"
+      "!<rootDir>/src/ds/molecules/index.js",
+      "!<rootDir>/src/testUtils"
     ],
     "coverageThreshold": {
       "global": {

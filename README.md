@@ -41,6 +41,24 @@ yarn commit
 
 Le Design System (DS) sera mis en place à travers l'approche [Atomic Design](https://atomicdesign.bradfrost.com/table-of-contents/) depuis le _folder_ `/src/ds/`.
 
+## Alias modules ESM
+
+Il existe 3 différents aliases utilisés dans ce repository et déclarés dans [jsconfig.json](./jsconfig.json) :
+
+```json
+"core": ["./src/core"],
+"ds": ["./src/ds"],
+"testUtils": ["./src/testUtils"]
+```
+
+Désormais, l'import d'un module se fera à travers :
+
+```javascript
+import { Price } from "ds/atoms";
+```
+
+⚠ _Warning_ : ne pas créer trop d'alias ! Cela rendrait les imports bien moins pertinents et la folder structure en souffrirait.
+
 ## CRA
 
 [Official CRA doc](./docs/CRA.md).
