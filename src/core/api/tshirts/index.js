@@ -10,7 +10,7 @@ export const tshirts = {
   getList:
     ({ styleIds }) =>
     () => {
-      const tshirtRoute = new URL("/tshirts", API_BASE_URL);
+      const tshirtRoute = new URL(`${API_BASE_URL}/tshirts`);
 
       const { searchParams } = tshirtRoute;
       styleIds.forEach((styleId) => {
@@ -22,7 +22,7 @@ export const tshirts = {
   getOne:
     ({ id }) =>
     () => {
-      const tshirtRoute = new URL(`/tshirts/${id}`, API_BASE_URL);
+      const tshirtRoute = new URL(`${API_BASE_URL}/tshirts/${id}`);
 
       return fetch(tshirtRoute).then(responseToJson);
     },
