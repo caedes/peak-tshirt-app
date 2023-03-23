@@ -5,6 +5,7 @@
   "scripts": {
     "build": "react-scripts build",
     "commit": "git-cz",
+    "format": "prettier --write **/*.{css,html,js,json,md}",
     "lint": "eslint --cache .",
     "prepare": "husky install && node ./scripts/copy-config.js",
     "start": "react-scripts start",
