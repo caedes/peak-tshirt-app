@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "build": "react-scripts build",
+    "build-storybook": "build-storybook -s public",
     "commit": "git-cz",
     "format": "prettier --write **/*.{css,html,js,json,md}",
     "lint": "eslint --cache .",
     "prepare": "husky install && node ./scripts/copy-config.js",
     "start": "react-scripts start",
     "start:api": "json-server --watch db.json --port 3001",
+    "storybook": "start-storybook -p 6006 -s public",
     "test": "react-scripts test --coverage",
     "test:coverage": "yarn open-cli coverage/lcov-report/index.html"
   },
@@ -37,6 +39,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "jest": {
@@ -85,6 +97,17 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/node-logger": "^6.5.16",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-plugin-named-exports-order": "^0.0.2",
     "buffer": "^6.0.3",
     "git-cz": "^4.9.0",
     "husky": "^8.0.3",
@@ -93,6 +116,7 @@
     "msw": "^1.2.0",
     "open-cli": "^7.2.0",
     "prettier": "^2.8.4",
-    "prettier-plugin-packagejson": "^2.4.3"
+    "prettier-plugin-packagejson": "^2.4.3",
+    "webpack": "^5.76.3"
   }
 }
