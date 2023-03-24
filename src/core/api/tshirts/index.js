@@ -17,13 +17,13 @@ export const tshirts = {
         searchParams.append("styleId", styleId);
       });
 
-      return fetch(tshirtRoute).then(responseToJson);
+      return fetch(tshirtRoute.toString()).then(responseToJson);
     },
   getOne:
     ({ id }) =>
     () => {
       const tshirtRoute = new URL(`${API_BASE_URL}/tshirts/${id}`);
 
-      return fetch(tshirtRoute).then(responseToJson);
+      return fetch(tshirtRoute.toString()).then(responseToJson);
     },
 };
