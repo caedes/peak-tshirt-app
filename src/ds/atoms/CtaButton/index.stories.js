@@ -1,7 +1,8 @@
 import CtaButton from ".";
+import { sbTitle } from "..";
 
 export default {
-  title: "CtaButton",
+  title: sbTitle("CtaButton"),
   component: CtaButton,
 };
 

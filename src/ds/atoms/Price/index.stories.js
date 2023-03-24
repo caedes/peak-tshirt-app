@@ -1,7 +1,8 @@
 import Price from ".";
+import { sbTitle } from "..";
 
 export default {
-  title: "Price",
+  title: sbTitle("Price"),
   component: Price,
 };
 
