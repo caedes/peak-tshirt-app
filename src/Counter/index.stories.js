@@ -13,3 +13,8 @@ export const WithA2ValueStep = Template.bind({});
 WithA2ValueStep.args = {
   step: 2,
 };
+
+export const NegativeDefaultCounter = Template.bind({});
+NegativeDefaultCounter.args = {
+  defaultCounter: -10,
+};

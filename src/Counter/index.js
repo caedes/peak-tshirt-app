@@ -1,5 +1,6 @@
 import useCounter from "./useCounter";
 import "./styles.css";
+import { number } from "prop-types";
 
 export default function Counter({ defaultCounter = 0, step = 1 }) {
   const [counter, { add, substract }] = useCounter({ defaultCounter, step });
@@ -12,3 +13,8 @@ export default function Counter({ defaultCounter = 0, step = 1 }) {
     </article>
   );
 }
+
+Counter.propTypes = {
+  defaultCounter: number,
+  step: number,
+};
