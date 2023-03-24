@@ -43,15 +43,15 @@
     "collectCoverageFrom": [
       "src/**/*.js",
       "!<rootDir>/node_modules/",
-      "!<rootDir>/src/reportWebVitals.js",
-      "!<rootDir>/src/index.js",
-      "!<rootDir>/src/App/index.js",
-      "!<rootDir>/src/core/api/index.js",
-      "!<rootDir>/src/core/contexts/index.js",
-      "!<rootDir>/src/core/hooks/index.js",
-      "!<rootDir>/src/ds/atoms/index.js",
-      "!<rootDir>/src/ds/molecules/index.js",
-      "!<rootDir>/src/testUtils"
+      "!src/reportWebVitals.js",
+      "!src/index.js",
+      "!src/App/index.js",
+      "!src/core/api/index.js",
+      "!src/core/contexts/index.js",
+      "!src/core/hooks/index.js",
+      "!src/ds/atoms/index.js",
+      "!src/ds/molecules/index.js",
+      "!src/testUtils/**/*"
     ],
     "coverageThreshold": {
       "global": {
